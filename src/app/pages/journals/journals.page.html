@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">Notas</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let journal of journals" (click)="openJournal(journal)">
+        <ion-card>
+
+          <ion-card-header>
+            <ion-card-title class="title">{{journal.title}}</ion-card-title>
+            <ion-card-subtitle  color="secondary" >06:11</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content class="content">
+            {{journal.content }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-modal  #modal [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]" trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Add Notas</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Save</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        
+        <ion-item>
+          <ion-input label="Title" labelPlacement="stacked" type="text" placeholder="" [(ngModel)]="title"></ion-input>
+        </ion-item>
+
+        <ion-textarea class="text-content" rows=“15”  lines="none" placeholder="Type something here"
+        [(ngModel)]="note">
+        </ion-textarea>
+      
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button id="open-modal">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

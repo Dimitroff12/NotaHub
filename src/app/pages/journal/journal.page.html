@@ -1,0 +1,31 @@
+<ion-header [translucent]="true" class="ion-no-border"> 
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="updateJournal()">
+        <ion-icon color="secondary" size="large" slot="icon-only" name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteJounal()">
+        <ion-icon color="danger"  size="large" slot="icon-only" name="trash" >  </ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Notas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="journal">
+    <ion-item>
+      <ion-input label="Title"   class="title" [(ngModel)]="journal.title"></ion-input>
+    </ion-item>
+      <ion-textarea class="text-content" lines="none" [(ngModel)]="journal.content" ></ion-textarea>
+  </div>
+
+</ion-content>

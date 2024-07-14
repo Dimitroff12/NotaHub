@@ -1,0 +1,28 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar >
+    <ion-title slot="start">
+      NoteHub
+    </ion-title>
+    <ion-button slot="end" fill="clear" (click)="signOut()">Sair</ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <h1>OLÁ</h1>
+    <strong style="color: royalblue;">{{email}}</strong>
+  </div>
+  <div id="container1" >
+    <h1>SEJA BEM VINDO <br> AO <br> SISTEMA DE GERENCIAMENTO DE NOTAS </h1>
+    
+  </div>
+
+  <ion-fab  vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+    <ion-fab-button  [routerLink]="['/journals']">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>
+  

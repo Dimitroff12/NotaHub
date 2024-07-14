@@ -1,0 +1,50 @@
+.input{
+    font-weight: 300;
+}
+ion-item {
+    --background: transparent;
+
+}
+
+.title{
+    font-weight: bold;
+    color: black;
+    font-size: 10px;
+    display: -webkit-box;   
+    overflow: hidden; 
+    height: 30px;
+
+}
+
+.content {
+    font-weight: 300;
+    height: 90px;
+    display: -webkit-box;   
+   overflow: hidden; 
+
+}
+ion-card {
+    --background: #F0F2F9;
+  }
+  ion-label ion-note {
+    font-size: 0.9rem;
+  }
+
+  .category-dot{
+    color: red;
+    
+  }
+  ion-textarea {
+    min-height: 140px;
+    textarea {
+        min-height:140px;
+    }
+}
+
+.text-content{
+    // font-size: 4em;
+    // min-height: 140px;
+    min-height:240px;
+    
+
+}
